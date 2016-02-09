@@ -13,7 +13,7 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:System San Francisco Display 8
+font pango:System San Francisco Display 10
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -30,13 +30,13 @@ font pango:System San Francisco Display 8
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
-
+#bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec gnome-terminal
 # kill focused window
 bindsym $mod+Shift+q kill
 
 # start rofi. keeping instructions below for dmenu because
-bindsym $mod+d exec rofi -show run -lines 3 -eh 2 -width 100 -padding 400 -opacity "75" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "System San Francisco Display 12"
+bindsym $mod+d exec rofi -show run -lines 3 -eh 2 -width 100 -padding 100 -opacity "75" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "System San Francisco Display 12"
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
@@ -193,12 +193,14 @@ bindsym $mod+shift+z exec i3lock --color "$bg-color"
 
 exec firefox
 
-exec_always feh --bg-scale /home/pat/Downloads/beach.jpg
+exec_always feh --bg-scale /home/pat/Downloads/capitan.jpg
 
 # Audio controls
 bindsym $mod+shift+F11 exec amixer -D pulse sset Master 10%- #lower
 bindsym $mod+shift+F12 exec amixer -D pulse sset Master 10%+ #raise
 
+#mute toggle
+bindsym $mod+shift+F10 exec amixer set Master toggle
 
 # Sreen brightness
 bindsym $mod+shift+F5 exec xbacklight -10 #lower brightness
@@ -219,5 +221,9 @@ exec --no-startup-id nm-applet
 #sexy fades
 exec_always compton -f
 
-#enable two finger scroll to save my saity
+#enable two finger scroll to save my sanity
 exec synclient VertTwoFingerScroll=1
+
+#enable the tap feature of the trackpad. Not needed on ubuntu, needed on debian
+exec synclient TapButton1=1
+

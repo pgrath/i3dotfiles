@@ -157,6 +157,7 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+#2f343f
 
 set $bg-color 	         #2f343f
 set $inactive-bg-color   #2f343f
@@ -219,7 +220,7 @@ bindsym $mod+shift+F6 exec xbacklight +10 #raise roof
 exec --no-startup-id nm-applet
 
 #sexy fades
-exec_always compton -f
+exec_always compton -f -i 0.6
 
 #enable two finger scroll to save my sanity
 exec synclient VertTwoFingerScroll=1
@@ -227,3 +228,18 @@ exec synclient VertTwoFingerScroll=1
 #enable the tap feature of the trackpad. Not needed on ubuntu, needed on debian
 exec synclient TapButton1=1
 
+#turn on flux (not working) jk it works
+exec ~/.i3/scripts/xflux -z 07070
+
+#dropboxxxxxxxxxxxxxxxxxx
+exec --no-startup-id dropbox start
+
+#dont need no title bars
+for_window [class="Firefox"] border pixel 0
+for_window [class="Iceweasel"] border pixel 0
+for_window [class="gnome-terminal"] border pixel 0
+#for_window [class="^.*"] border pixel 0
+
+
+#for_window [class="^.*"] border pixel 1
+#new_window 1pixel

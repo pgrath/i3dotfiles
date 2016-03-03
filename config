@@ -13,7 +13,7 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:System San Francisco Display 10
+font pango:System San Francisco Display 11
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -206,6 +206,9 @@ bindsym $mod+shift+F10 exec amixer set Master toggle
 # Sreen brightness
 bindsym $mod+shift+F5 exec xbacklight -10 #lower brightness
 bindsym $mod+shift+F6 exec xbacklight +10 #raise roof
+
+#calculator
+bindsym $mod+c exec ~/menu-calc/=
 
 # Touchpad controls
 #bindsym XF86TouchpadToggle exec /some/path/toggletouchpad.sh # toggle touchpad
